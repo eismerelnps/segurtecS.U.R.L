@@ -1,11 +1,6 @@
-import React from 'react'
-
+import Services from '../components/Services/Services'
 export default function ServicesPage() {
   return (
-    <div>
-        <h1>
-            Servivios
-        </h1>
-    </div>
+  <Services />
   )
 }

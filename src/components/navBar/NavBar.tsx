@@ -2,10 +2,11 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
 
-import segurtec_logo from '../../../public/logo01.png';
+import Image from 'next/image'
 import Link from 'next/link'
+
+import segurtec_logo from '/public/logo01.png'
 
 const navigation = [
     { name: 'Inicio', href: '/', current: false },
@@ -14,9 +15,9 @@ const navigation = [
     { name: 'Contáctanos', href: '#', current: false },
 ]
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+// function classNames(...classes) {
+//     return classes.filter(Boolean).join(' ')
+// }
 
 export default function NavBar() {
     return (
@@ -54,10 +55,10 @@ export default function NavBar() {
                                                 key={item.name}
                                                 href={item.href}
 
-                                                className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                className={`
+                                                    ${item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-red hover:text-white'}
                                                     'rounded-md px-3 py-2 text-sm font-medium'
-                                                )}
+                                                first:`}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
@@ -95,7 +96,7 @@ export default function NavBar() {
                                 <Menu as="div" className="relative ml-3">
                                     <div>
                                         <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                            <span className="sr-only">Open user menu</span>
+                                            <span className="sr-only ">Open user menu</span>
                                             {/* <img
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -117,7 +118,7 @@ export default function NavBar() {
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-blue-600')}
                                                     >
                                                         Your Profile
                                                     </a>
@@ -157,10 +158,10 @@ export default function NavBar() {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className={classNames(
-                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                    className={`
+                                       ${item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}
                                         'block rounded-md px-3 py-2 text-base font-medium'
-                                    )}
+                                    `}
                                     aria-current={item.current ? 'page' : undefined}
                                 >
                                     {item.name}
