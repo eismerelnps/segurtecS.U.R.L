@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import banner_01 from '/public/banner_01.webp'
+import wolf_banner from '/public/wolf_banner.jpg'
 
 export default function AboutMain() {
     return (
@@ -14,7 +15,7 @@ export default function AboutMain() {
                     <div className='flex items-center h-full'>
                         <Image
                             className='rounded-2xl'
-                            src={banner_01}
+                            src={wolf_banner}
                             alt={'Segurtec banner'}
                             style={{
                                 maxWidth: '100%',
