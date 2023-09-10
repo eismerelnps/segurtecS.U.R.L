@@ -10,10 +10,8 @@ export default function ServicesCard({ service }: { service: mainServicesInterfa
         <div className='absolute rounded-full -top-16  -end-20 bg-red-50 border border-white opacity-60 shadow-xl shadow-red-100 h-72 w-72 z-[1] '></div>
         <div className='absolute rounded-full -top-16  -end-20 bg-red-50 border border-white opacity-60 shadow-xl shadow-red-50 h-80 w-80 z-0 '></div>
         <div className='absolute rounded-full -bottom-6  -start-6 bg-red-50 h-24 w-24 z-0 '></div>
-        
         <div className='relative mt-1 mb-4 z-10'>
           <h3 className='text-2xl text-neutral-500 '>{service.name}</h3>
-
         </div>
         <div className='relative z-10 '>
           <p>{service.description}</p>
