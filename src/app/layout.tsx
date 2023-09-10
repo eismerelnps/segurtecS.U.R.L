@@ -1,4 +1,5 @@
-import NavBar from '@/components/navBar/NavBar'
+
+import NavBar from '../components/navBar/NavBar'
 import './globals.css'
 import type { Metadata } from 'next'
 
