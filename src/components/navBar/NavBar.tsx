@@ -15,9 +15,6 @@ const navigation = [
     { name: 'Contáctanos', href: '#', current: false },
 ]
 
-// function classNames(...classes) {
-//     return classes.filter(Boolean).join(' ')
-// }
 
 export default function NavBar() {
     return (
@@ -56,7 +53,7 @@ export default function NavBar() {
                                                 href={item.href}
 
                                                 className={`
-                                                    ${item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-red hover:text-white'}
+                                                    ${item.current ? 'bg-gray-900 text-white' : 'text-gray-900 hover:bg-red hover:text-gray-500'}
                                                     'rounded-md px-3 py-2 text-sm font-medium'
                                                 first:`}
                                                 aria-current={item.current ? 'page' : undefined}
@@ -118,7 +115,7 @@ export default function NavBar() {
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-blue-600')}
+                                                        className={`${ active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-blue-600' `}
                                                     >
                                                         Your Profile
                                                     </a>
@@ -128,7 +125,7 @@ export default function NavBar() {
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={`${active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-gray-700'`}
                                                     >
                                                         Settings
                                                     </a>
@@ -138,7 +135,7 @@ export default function NavBar() {
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={` ${active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-gray-700')`}
                                                     >
                                                         Sign out
                                                     </a>
