@@ -1,8 +1,12 @@
 import React from 'react'
+import './promo.css'
 
 export default function Promo() {
   return (
     <section className='bg-neutral-200 '>
+       
+
+    
       <article className='flex flex-col sm:flex-row space-y-8 py-12 px-4 sm:p-16 '>
         <div className='basis-full sm:basis-1/2 self-center'>
           <div>
@@ -20,8 +24,7 @@ export default function Promo() {
 
         </div>
       </article>
-    
-
+     
     </section>
   )
 }
