@@ -12,6 +12,7 @@
     "@types/node": "^20.6.0",
     "@types/react": "^18.2.21",
     "autoprefixer": "^10.4.15",
+    "daisyui": "^4.10.1",
     "postcss": "^8.4.28",
     "redux-devtools-extension": "^2.13.9",
     "standard": "^17.1.0",
@@ -23,10 +24,12 @@
     "@vercel/analytics": "^1.0.2",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
+    "feather-icons": "^4.29.1",
     "next": "^13.4.19",
     "next-intl": "^3.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
     "typescript": "5.1.6"
   }
 }
