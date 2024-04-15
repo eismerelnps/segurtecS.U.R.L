@@ -5,7 +5,7 @@ import wolf_banner from '/public/wolf_banner.jpg'
 
 export default function AboutMain() {
     return (
-        <div className='bg-white shadow shadow-neutral-50 sm:p-8 lg:p-16'>
+        <div className=' shadow shadow-neutral-50 sm:p-8 lg:p-16'>
             <div className='flex flex-col lg:flex-row justify-center px-4 py-8 sm:px-2 sm:py-4 lg:px-8 lg:py-16'>
                 <div className='basis-full lg:basis-1/2 '>
                     <div className='block lg:hidden my-8'>
@@ -21,7 +21,7 @@ export default function AboutMain() {
                                 maxWidth: '100%',
                                 height: 'auto',
                                 objectFit: 'cover',
-                                objectPosition: 'top', // Alinear la imagen hacia arriba
+                                objectPosition: 'top', 
                             }}
                         />
                     </div>

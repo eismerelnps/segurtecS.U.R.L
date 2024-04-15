@@ -1,8 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
- 
+import type { Metadata } from 'next'
 import NavBar from '@/components/navBar/NavBar'
 import './globals.css'
-import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'SegurtecS.U.R.L',
@@ -15,10 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html className=' bg-white text-black dark:bg-carbon-50 dark:text-white-50' lang="es">
 
       <link rel="icon" href="logo01.png" />
-      <body >
+      <body  >
         <NavBar />
         {children}
         <Analytics />
