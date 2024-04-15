@@ -21,9 +21,9 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html className=' bg-white text-black dark:bg-carbon-50 dark:text-white-50' lang="es">
+    <html className='' lang="es">
       <link rel="icon" href="logo01.png" />
-      <body  >
+      <body className=' bg-white text-black dark:bg-carbon-50 dark:text-white-50 ' >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NavBar />
           {children}
