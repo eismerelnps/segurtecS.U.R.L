@@ -1,5 +1,5 @@
 import React from 'react'
-import { mainServices } from '@/data/services'
+import { mainServices } from '@/lib/data/services'
 import ServicesCard from './ServicesCard'
 export default function ServicesList() {
     return (
