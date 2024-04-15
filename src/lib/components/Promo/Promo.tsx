@@ -10,7 +10,7 @@ export default function Promo() {
         alt="portrait Segurtec"
       />
       <article className='absolute bg-transparent h-full w-2/3  top-0 left-0 '>
-        <div className=' bg-slate-100/50  flex flex-col justify-center  h-full ps-1.5 lg:mx-12'>
+        <div className='   flex flex-col justify-center  h-full ps-1.5 lg:mx-12'>
           <div className='my-1 ms-4'>
             <p className='text-lg lg:text-6xl text-white font-bold '>SEGURTEC S.U.R.L</p>
           </div>

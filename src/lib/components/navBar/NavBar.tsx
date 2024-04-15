@@ -7,21 +7,27 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import segurtec_logo from '/public/logo01.png'
+import { usePathname } from 'next/navigation'
 
 const navigation = [
-    { name: 'Inicio', href: '/', current: false },
-    { name: 'Servicios', href: 'services', current: false },
-    { name: 'Nosotros', href: 'about', current: false },
-    { name: 'Contáctanos', href: '#', current: false },
+    { name: 'Inicio', href: '/' },
+    { name: 'Servicios', href: 'services' },
+    { name: 'Nosotros', href: 'about' },
+    { name: 'Contáctanos', href: '#' },
 ]
 
+const handleToggleTheme = () => {
+    document.documentElement.classList.toggle('dark')
+}
 
 export default function NavBar() {
+    const path = usePathname();
+    console.log(path)
     return (
         <Disclosure as="nav" className="">
             {({ open }) => (
                 <>
-                    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                    <div className=" mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
@@ -43,41 +49,20 @@ export default function NavBar() {
                                         alt="PSegurtec Logo"
                                     />
                                 </div>
-
                                 <div className="hidden sm:ml-6 sm:block w-100">
-                                    <div className="flex space-x-4 ">
+                                    <ul className="flex flex-row justify-end items-center space-x-4 h-full">
                                         {navigation.map((item) => (
-
-                                            <Link
-                                                key={item.name}
-                                                href={item.href}
-
-                                                className={`
-                                                    ${item.current ? 'bg-gray-900 text-white' : 'text-gray-900 hover:bg-red hover:text-gray-500'}
-                                                    'rounded-md px-3 py-2 text-sm font-medium'
-                                                first:`}
-                                                aria-current={item.current ? 'page' : undefined}
-                                            >
-                                                {item.name}
-                                            </Link>
-
-
-
-
-
-                                            //   <a
-                                            //     key={item.name}
-                                            //     href={item.href}
-                                            //     className={classNames(
-                                            //       item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            //       'rounded-md px-3 py-2 text-sm font-medium'
-                                            //     )}
-                                            //     aria-current={item.current ? 'page' : undefined}
-                                            //   >
-                                            //     {item.name}
-                                            //   </a>
+                                            <li key={item.name} >
+                                                <Link
+                                                    href={item.href}
+                                                    className={`font-weight-600 transition delay-100 ${path === item.name ? 'bg-gray-900 text-white' : 'text-gray-900 dark:text-red-50 hover:bg-red hover:text-gray-500'}`}
+                                                    aria-current={item.name ? 'page' : undefined}
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            </li>
                                         ))}
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -115,7 +100,7 @@ export default function NavBar() {
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={`${ active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-blue-600' `}
+                                                        className={`${active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-blue-600' `}
                                                     >
                                                         Your Profile
                                                     </a>
