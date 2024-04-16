@@ -37,9 +37,43 @@
 }  */
 .navBar {
   background: rgb(251, 63, 63);
-  background: radial-gradient(
-    circle,
-    rgba(251, 63, 63, 0.756827731092437) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  background: radial-gradient(circle,
+      rgba(251, 63, 63, 0.756827731092437) 0%,
+      rgba(0, 0, 0, 1) 100%);
+}
+
+h1 {
+  @apply font-bold text-4xl md:text-5xl lg:text-6xl;
+}
+
+;
+
+h2 {
+  @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+}
+
+;
+
+h3 {
+  @apply font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+h4 {
+  @apply font-normal text-lg md:text-xl lg:text-xl xl:text-2xl;
+}
+
+;
+
+h5 {
+  @apply font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+;
+
+h6 {
+  @apply font-bold text-sm md:text-base lg:text-lg xl:text-xl;
+}
+
+p {
+  @apply text-base md:text-lg xl:text-xl;
 }

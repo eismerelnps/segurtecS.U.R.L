@@ -1,158 +1,104 @@
 'use client'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
-import Image from 'next/image'
+import { Bars3Icon, ChatBubbleLeftEllipsisIcon, ChatBubbleLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-
+import React, { useState } from 'react'
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import segurtec_logo from '/public/logo01.png'
-import { usePathname } from 'next/navigation'
+import Image from 'next/image'
+import useDeviceType from '@/lib/hooks/useDeviceType';
 
-const navigation = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Servicios', href: 'services' },
-    { name: 'Nosotros', href: 'about' },
-    { name: 'Contáctanos', href: '#' },
+const items = [
+    {
+        key: "home",
+        link: "/"
+    },
+    {
+        key: "solutions",
+        link: ""
+    },
+    {
+        key: "products",
+        link: ""
+    },
+    {
+        key: "services",
+        link: "/#services"
+    },
+    {
+        key: "where_we_work",
+        link: "/#business_area"
+    }
 ]
 
-const handleToggleTheme = () => {
-    document.documentElement.classList.toggle('dark')
+function NavbarItems() {
+    const path = usePathname();
+    const t = useTranslations('Index');
+
+    return (
+        <section className='col-span-8 '>
+            <ul className='flex flex-col md:flex-row gap-4 justify-start items-start md:justify-center md:items-center w-full h-full bg-white md:bg-transparent px-2'>
+                {
+                    items.map(({ key, link }, index) => (
+                        <li key={index} className={` ${path === '/' && 'border-b-2'}  border-b-2 border-transparent hover:border-primary-200 transition-all duration-100 `}><Link href={link}><p>{t(key)}</p></Link></li>
+                    ))
+                }
+            </ul>
+        </section>
+    )
 }
 
-export default function NavBar() {
-    const path = usePathname();
-    console.log(path)
+export default function Navbar() {
+    const t = useTranslations('Index');
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
+    const { isMobile } = useDeviceType();
+
+    const handleToggleDrawerState = () => {
+        setDrawerOpen(!drawerOpen)
+    }
     return (
-        <Disclosure as="nav" className="">
-            {({ open }) => (
-                <>
-                    <div className=" mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                        <div className="relative flex h-16 items-center justify-between">
-                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                                {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                                    <span className="sr-only">Open main menu</span>
-                                    {open ? (
-                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                                    ) : (
-                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                                    )}
-                                </Disclosure.Button>
-                            </div>
-                            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex flex-shrink-0 items-center">
+        <div className='relative '>
+            <article className='z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2 bg-gradient-to-l from-primary-100/80 via-primary-50 to-primary-50'>
+                {
+                    isMobile &&
+                    <section>
+                        <button onClick={handleToggleDrawerState} className={`text-primary-500 dark:text-primary-900 border-primary-950 text-lg font-semibold px-2 py-2 rounded-full  hover:opacity-80 outline-0 focus:outline-0 transition-all duration-200 `}>
+                            {drawerOpen ? <XMarkIcon className='size-8' /> : <Bars3Icon className='size-8' />}
+                        </button>
+                    </section>
+                }
+
+
+                <section className='flex justify-start items-center gap-2 px-12'>
+                    <Link href={'/'}>
+                        <div className='flex justify-start items-center gap-2'>
+                            <div className="avatar ">
+                                <div className="w-12 border border-primary-500 rounded-full relative">
                                     <Image
-                                        src={segurtec_logo}
-                                        width={50}
-                                        height={50}
-                                        alt="PSegurtec Logo"
-                                    />
-                                </div>
-                                <div className="hidden sm:ml-6 sm:block w-100">
-                                    <ul className="flex flex-row justify-end items-center space-x-4 h-full">
-                                        {navigation.map((item) => (
-                                            <li key={item.name} >
-                                                <Link
-                                                    href={item.href}
-                                                    className={`font-weight-600 transition delay-100 ${path === item.name ? 'bg-gray-900 text-white' : 'text-gray-900 dark:text-red-50 hover:bg-red hover:text-gray-500'}`}
-                                                    aria-current={item.name ? 'page' : undefined}
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                        alt=''
+                                        src={segurtec_logo} />
                                 </div>
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                {/* <button
-                                    type="button"
-                                    className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                >
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                                </button> */}
-
-                                {/* Profile dropdown */}
-                                <Menu as="div" className="relative ml-3">
-                                    <div>
-                                        <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                            <span className="sr-only ">Open user menu</span>
-                                            {/* <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      /> */}
-                                        </Menu.Button>
-                                    </div>
-                                    <Transition
-                                        as={Fragment}
-                                        enter="transition ease-out duration-100"
-                                        enterFrom="transform opacity-0 scale-95"
-                                        enterTo="transform opacity-100 scale-100"
-                                        leave="transition ease-in duration-75"
-                                        leaveFrom="transform opacity-100 scale-100"
-                                        leaveTo="transform opacity-0 scale-95"
-                                    >
-                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={`${active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-blue-600' `}
-                                                    >
-                                                        Your Profile
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={`${active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-gray-700'`}
-                                                    >
-                                                        Settings
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={` ${active ? 'bg-gray-100' : ''}, 'block px-4 py-2 text-sm text-gray-700')`}
-                                                    >
-                                                        Sign out
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                        </Menu.Items>
-                                    </Transition>
-                                </Menu>
+                            <div className={` flex justify-start items-center gap-2`}>
+                                <h6 className='text-primary-500'>SegurTec</h6>
+                                <h6 className='text-black'>S.U.R.L</h6>
                             </div>
                         </div>
-                    </div>
+                    </Link>
+                </section>
+                <div className={`${isMobile && drawerOpen ? 'fixed top-16 right-0 left-0' : 'hidden'}`}><NavbarItems /></div>
+                {
+                    !isMobile && <NavbarItems />
+                }
+                <section className='flex justify-center items-center gap-4'>
+                    {isMobile ? <button className="btn btn-circle bg-transparent border-0"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></button> : <button className="btn btn-primary bg-primary-500  btn-xs sm:btn-sm  rounded-none">{t('contact_us')}</button>}
+                    {!isMobile && <button className="btn btn-outline btn-xs sm:btn-sm  rounded-none">{t('follow_us')}</button>}
+                </section>
 
-                    <Disclosure.Panel className="sm:hidden">
-                        <div className="space-y-1 px-2 pb-3 pt-2">
-                            {navigation.map((item) => (
-                                <Disclosure.Button
-                                    key={item.name}
-                                    as="a"
-                                    href={item.href}
-                                    className={`
-                                       ${item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}
-                                        'block rounded-md px-3 py-2 text-base font-medium'
-                                    `}
-                                    aria-current={item.current ? 'page' : undefined}
-                                >
-                                    {item.name}
-                                </Disclosure.Button>
-                            ))}
-                        </div>
-                    </Disclosure.Panel>
-                </>
-            )}
-        </Disclosure>
+
+            </article>
+        </div>
+
     )
 }
