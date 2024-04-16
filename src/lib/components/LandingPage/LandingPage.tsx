@@ -12,7 +12,7 @@ export default function LandingPage() {
   return (
     <main className='flex flex-col gap-8'>
       <Hero />
-      <Promo />
+      {/* <Promo /> */}
       <SlideshowContainer />
       <AboutMain />
       <ServicesList />

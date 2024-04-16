@@ -1,4 +1,4 @@
-import { mainServicesInterface } from '@/interfaces/ServicesInterface'
+import { mainServicesInterface } from '@/lib/interfaces/ServicesInterface'
 import Link from 'next/link'
 import React from 'react'
 

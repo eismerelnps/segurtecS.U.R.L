@@ -64,14 +64,14 @@ export default function Footer() {
   const t = useTranslations('Index');
 
   return (
-    <div id='footer' className='flex flex-col lg:py-12 px-8 lg:px-32 lg:gap-16 bg-primary-50'>
+    <div id='footer' className='flex flex-col py-4 lg:py-12 px-8 lg:px-32 gap-8 lg:gap-16 bg-primary-50'>
 
-      <div className='w-full flex flex-row justify-center items-center gap-2'>
+      <div className='w-full flex flex-col md:flex-row justify-center items-center gap-4'>
         <h2 className={`${quicksand.className} text-primary-500`}>{t('would_glad_help_you')}</h2>
         <button className="btn btn-outline btn-xs sm:btn-sm lg:btn-md rounded-none">{t('contact_us')}</button>
       </div>
 
-      <div className='flex lg:flex-row lg:px-32 justify-center'>
+      <div className='flex flex-col lg:flex-row lg:px-32 justify-center gap-4'>
         <div className='lg:basis-1/4 flex flex-col justify-center items-center'>
           <div className='flex justify-start items-center gap-2'>
             <div className="avatar ">
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
             <div className={` flex justify-start items-center gap-2`}>
               <h6 className='text-primary-500'>SegurTec</h6>
-              <h6 className='text-neutral-500'>S.U.R.L</h6>
+              <h6 className='text-black'>S.U.R.L</h6>
             </div>
           </div>
           <div>
@@ -98,16 +98,16 @@ export default function Footer() {
         <section className='lg:basis-1/6 px-2'>
           <h4 className='font-bold text-nowrap'>{t('our_company')}</h4>
           <ul className='p-2 flex flex-col gap-2'>
-            {our_company_items.map(({ key, link }) => (
-              <li><Link href={link}><p className='opacity-80 hover:underline'>{t(key)}</p></Link> </li>
+            {our_company_items.map(({ key, link }, index) => (
+              <li key={index}><Link href={link}><p className='opacity-80 hover:underline'>{t(key)}</p></Link> </li>
             ))}
           </ul>
         </section>
         <section className='lg:basis-1/6 px-2'>
           <h4 className='font-bold text-nowrap'>{t('work_with_us')}</h4>
           <ul className='p-2 flex flex-col gap-2'>
-            {work_with_us_items.map(({ key, link }) => (
-              <li><Link href={link}><p className='opacity-80 hover:underline'>{t(key)}</p></Link> </li>
+            {work_with_us_items.map(({ key, link }, index) => (
+              <li key={index}><Link href={link}><p className='opacity-80 hover:underline'>{t(key)}</p></Link> </li>
             ))}
           </ul>
         </section>
@@ -115,15 +115,15 @@ export default function Footer() {
           <section className='lg:basis-1/4 '>
             <h4 className='font-bold text-nowrap'>{t('contact')}</h4>
             <ul className='p-2 flex flex-col gap-2'>
-              {contact_items.map(({ key, link }) => (
-                <li><Link href={link}><p className='opacity-80 hover:underline'>{t(key)}</p></Link> </li>
+              {contact_items.map(({ key, link }, index) => (
+                <li key={index}><Link href={link}><p className='opacity-80 hover:underline'>{t(key)}</p></Link> </li>
               ))}
             </ul>
           </section>
         </section>
       </div>
 
-      <div className='basis-full flex items-center justify-between'>
+      <div className='basis-full flex items-center justify-between flex-col md:flex-row gap-4'>
         <p className='text-sm opacity-90'>© {currentYear} SEGURTEC S.U.R.L</p>
         <div className='flex justify-end items-center gap-2'>
           <p className='text-sm opacity-90'>{t('developed_by')}</p>

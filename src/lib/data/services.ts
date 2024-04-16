@@ -1,4 +1,4 @@
-import { mainServicesInterface } from "@/interfaces/ServicesInterface";
+import { mainServicesInterface } from "../interfaces/ServicesInterface";
 
 export const electricServices = [
     { name: "Instalaciones eléctricas", description: "Realizamos instalaciones eléctricas completas para hogares, oficinas, locales comerciales y otros espacios. Nos encargamos de la planificación, diseño y ejecución de proyectos, asegurando que se cumplan todas las normativas de seguridad." },
