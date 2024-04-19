@@ -10,10 +10,6 @@ import useDeviceType from '@/lib/hooks/useDeviceType';
 
 const items = [
     {
-        key: "home",
-        link: "/"
-    },
-    {
         key: "solutions",
         link: ""
     },
