@@ -1,9 +1,9 @@
 {
   "Index": {
     "company_name": "SegurTec SURL",
-    "hero_text_1": "Su seguridad, nuestra preocupación, ",
+    "hero_text_1": "Su seguridad, nuestra preocupación",
     "hero_text_2": "protegemos lo que más te importa",
-    "hero_text_3": "En Segurtec, brindamos servicios de seguridad que salvaguarden su negocio contra posibles amenazas. Con nuestra tecnología de punta .",
+    "hero_text_3": "Servicios de seguridad y electricidad para tu hogar o empresa, corrientes débiles, sistemas de cierres mecánicos y automáticos, cajas caudales y cajas fuertes.",
     "follow_us": "Síguenos",
     "contact_us": "Contáctanos",
     "know_more": "Saber más",
@@ -26,6 +26,11 @@
     "contact": "Contacto",
     "vacancies": "Vacantes",
     "for_students": "Para estudiantes",
-    "who_we_are": "¿Quienes somos?"
+    "who_we_are": "¿Quienes somos?",
+    "clients_title": "Nuestra presencia ",
+    "solutions_up_title": "Variedad de soluciones para ti",
+    "solutions_title": "Una solución a medida para cada cliente",
+    "solutions_sub_title": "En SegurTec te ofrecemos nos ajustamos a las necesidades específicas de cada cliente por lo que ....",
+    "access_control_system": "Sistemas de control de acceso"
   }
 }

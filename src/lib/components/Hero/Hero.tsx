@@ -6,7 +6,7 @@ export default function Hero() {
   const t = useTranslations('Index');
 
   return (
-    <div className='w-full h-full flex flex-col gap-8 md:flex-row pt-24 px-[5%] lg:px-[8%] lg:pt-[5%] xl:px-[15%] xl:pt-[10%] '>
+    <div className=' hero_background w-full h-full flex flex-col gap-8 md:flex-row pt-24 px-[5%] lg:px-[8%] lg:pt-[5%] xl:px-[15%] xl:pt-[10%] '>
       <div className='basis-full md:basis-1/2 lg:basis-full lg:h-full flex flex-col justify-center items-start lg:gap-2'>
         <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-red-700 to-black text-4xl leading-[2.1875rem] tracking-[0.045rem] mb-5 md:w-10/12 lg:w-full lg:tracking-[0.0875rem] lg:mb-[1.875rem] lg:pr-12 lg:text-[3.2rem] lg:leading-[3.5rem] xl:text-[4rem] xl:leading-[3.60rem] 2xl:pr-0 2xl:text-[4.375rem] 2xl:leading-[4.3125rem]">{t('hero_text_1')}</h1>
 
