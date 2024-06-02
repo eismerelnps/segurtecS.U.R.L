@@ -2,87 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-
-/* body {
-  color: rgb(var(--foreground-rgb));
-
-
-  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(214, 219, 220) 100%);
-  
-  background: -moz-linear-gradient(90deg, rgb(39, 232, 0) 0%, rgb(144, 169, 142) 100%);
-  
-  background: -webkit-linear-gradient(45deg, rgb(0, 0, 0) 10%, rgb(29, 1, 1) 85%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#211F2F", endColorstr="#918CA9", GradientType=1 );
-   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); 
-}  */
-.navBar {
-  background: rgb(251, 63, 63);
-  background: radial-gradient(circle,
-      rgba(251, 63, 63, 0.756827731092437) 0%,
-      rgba(0, 0, 0, 1) 100%);
-}
-
 h1 {
-  @apply font-bold text-4xl md:text-5xl lg:text-6xl;
+  @apply text-xl md:text-3xl lg:text-4xl;
 }
-
-;
 
 h2 {
-  @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+  @apply text-lg md:text-2xl lg:text-3xl;
 }
 
-;
-
 h3 {
-  @apply font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+  @apply text-base md:text-xl lg:text-2xl;
 }
 
 h4 {
-  @apply font-normal text-lg md:text-xl lg:text-xl xl:text-2xl;
+  @apply text-base md:text-lg lg:text-xl;
 }
-
-;
 
 h5 {
-  @apply font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+  @apply text-sm md:text-base lg:text-lg;
 }
 
-;
-
 h6 {
-  @apply font-bold text-sm md:text-base lg:text-lg xl:text-xl;
+  @apply text-xs md:text-sm lg:text-base;
 }
 
 p {
-  @apply text-base md:text-lg xl:text-xl;
+  @apply text-base md:text-lg lg:text-xl;
 }
-
-/* .hero_background {
-  background-size: 100% 100%;
-  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
-  background-image: radial-gradient(18% 28% at 24% 50%, #FFCECEB0 7%, #073AFF00 100%), radial-gradient(18% 28% at 18% 71%, #FFFFFF59 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, #FF737345 0%, #073AFF00 100%), radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(42% 53% at 34% 72%, #FF000024 7%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%), radial-gradient(21% 37% at 72% 23%, #FF6D6D24 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #FF4F4F80 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #FF6D6D30 24%, #073AFF00 100%), linear-gradient(125deg, #00000094 1%, #FF00001F 100%);
-} */
 
 .hero_background {
   background-size: 100% 100%;

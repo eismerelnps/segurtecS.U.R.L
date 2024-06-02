@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SolutionsItem({ image, title }: { image: any, title: string }) {
   return (
-    <div className='relative size-72 xl:size-96 bg-black '>
+    <div className='relative size-72  bg-black '>
       <Image
         fill
         src={image}
