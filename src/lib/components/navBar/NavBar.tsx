@@ -1,7 +1,7 @@
 'use client'
 import { Bars3Icon, ChatBubbleLeftEllipsisIcon, ChatBubbleLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import segurtec_logo from '/public/logo01.png'
@@ -48,20 +48,36 @@ function NavbarItems() {
 export default function Navbar() {
     const t = useTranslations('Index');
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const { isMobile } = useDeviceType();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > window.innerHeight) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const handleToggleDrawerState = () => {
         setDrawerOpen(!drawerOpen)
     }
     return (
         <div className='relative '>
-            <article className='z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2 bg-gradient-to-r from-primary-100/80 via-primary-50 to-primary-50 dark:from-black dark:via-primary-900 dark:to-primary-700'>
+            <article className={`${isScrolled ? 'transition-all duration-150 bg-primary-50/90 dark:bg-primary-950/80 border-b border-white/20' : 'dark:bg-black/20'} z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2   `}>
                 {
                     isMobile &&
                     <section>
                         <button onClick={handleToggleDrawerState} className={`text-primary-500 dark:text-primary-900 border-primary-950 text-lg font-semibold px-2 py-2 rounded-full  hover:opacity-80 outline-0 focus:outline-0 transition-all duration-200 `}>
-                            {drawerOpen ? <XMarkIcon className='size-8' /> : <Bars3Icon className='size-8' />}
+                            {drawerOpen ? <XMarkIcon className='size-8' /> : <Bars3Icon className='size-8 dark:text-primary-50' />}
                         </button>
                     </section>
                 }
