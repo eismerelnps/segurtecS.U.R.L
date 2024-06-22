@@ -12,7 +12,7 @@ import SolutionsContainer from '../Solutions/SolutionsContainer'
 export default function LandingPage() {
 
   return (
-    <main className='flex flex-col gap-8'>
+    <main className='flex flex-col'>
       <Hero />
       {/* <Promo /> */}
       <SlideshowContainer />

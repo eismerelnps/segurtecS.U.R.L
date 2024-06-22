@@ -16,8 +16,8 @@ export const fixingServices = [
 
 ]
 export const mainServices: mainServicesInterface[] = [
-    { id: 1, name: "Instalación", description: 'Realizamos instalaciones de sistemas eléctricos completos, sistemas de iluminación, cableado estructurado y automatización según tus necesidades. Nuestro equipo se encargará de la planificación y diseño para garantizar un funcionamiento eficiente y seguro.' },
-    { id: 2, name: "Mantenimiento", description: 'Ofrecemos mantenimiento preventivo y correctivo para asegurarnos de que tus sistemas eléctricos, iluminación, cableado estructurado y de automatización funcionen de manera confiable. Realizamos revisiones periódicas y ajustes necesarios para mantener todo en perfectas condiciones.' },
-    { id: 3, name: "Reparación ", description: 'Nuestro equipo de expertos está preparado para solucionar rápidamente cualquier problema o falla que puedas experimentar en tus sistemas eléctricos, iluminación, cableado estructurado o sistemas de automatización. Restauramos la funcionalidad de manera eficiente y segura.' },
-    { id: 4, name: "Reconstrucción", description: 'En casos de daños significativos o desgaste severo en tus sistemas eléctricos, iluminación, cableado estructurado o sistemas de automatización, ofrecemos servicios de reconstrucción. Utilizamos repuestos de calidad y técnicas especializadas para restaurar y fortalecer tus sistemas.' },
+    { id: 1, name: "Instalación", description: 'Realizamos instalaciones de sistemas eléctricos completos, sistemas de iluminación, cableado estructurado y automatización.' },
+    { id: 2, name: "Mantenimiento", description: 'Mantenimiento preventivo y correctivo, revisiones periódicas y ajustes necesarios para mantener todo en perfectas condiciones.' },
+    { id: 3, name: "Reparación ", description: 'Nuestro equipo de expertos está preparado para solucionar rápidamente cualquier problema o falla que puedas experimentar en ' },
+    { id: 4, name: "Reconstrucción", description: 'En casos de daños significativos o desgaste severo en tus sistemas eléctricos, iluminación, cableado estructurado o sistemas ' },
 ]

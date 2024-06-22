@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import segurtec_logo from '/public/logo01.png'
 import Image from 'next/image'
 import useDeviceType from '@/lib/hooks/useDeviceType';
+import { quicksand } from '@/lib/core/fonts/quicksand';
 
 const items = [
     {
@@ -55,7 +56,7 @@ export default function Navbar() {
     }
     return (
         <div className='relative '>
-            <article className='z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2 bg-gradient-to-l from-primary-100/80 via-primary-50 to-primary-50'>
+            <article className='z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2 bg-gradient-to-r from-primary-100/80 via-primary-50 to-primary-50 dark:from-black dark:via-primary-900 dark:to-primary-700'>
                 {
                     isMobile &&
                     <section>
@@ -77,8 +78,7 @@ export default function Navbar() {
                                 </div>
                             </div>
                             <div className={` flex justify-start items-center gap-2`}>
-                                <h6 className='text-primary-500'>SegurTec</h6>
-                                <h6 className='text-black'>S.U.R.L</h6>
+                                <h6 className={`${quicksand.className} font-bold`}><span className='text-primary-500'>SegurTec</span> <span className='text-black dark:text-primary-50 text-sm'>S.U.R.L</span></h6>
                             </div>
                         </div>
                     </Link>

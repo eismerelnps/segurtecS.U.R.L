@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html className='' lang="es">
       <link rel="icon" href="logo01.png" />
-      <body className=' bg-white text-black dark:bg-carbon-50 dark:text-white-50 ' >
+      <body className=' bg-white dark:bg-black  dark:bg-carbon-50 text-primary-950 dark:text-primary-50 ' >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NavBar />
           {children}
