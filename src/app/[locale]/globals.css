@@ -45,3 +45,7 @@ p {
 .hero_background {
   @apply bg-gradient-to-r from-primary-100/80 via-primary-50 to-primary-50 dark:from-black dark:via-primary-950 dark:to-primary-900
 }
+
+.icon {
+  @apply size-3.5 md:size-4 lg:size-5
+}

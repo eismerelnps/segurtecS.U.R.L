@@ -2,6 +2,8 @@ import { francois_one } from '@/lib/core/fonts/francois-one';
 import { quicksand } from '@/lib/core/fonts/quicksand';
 import { useTranslations } from 'next-intl'
 import React from 'react'
+import { Button } from "@/lib/components/ui/button"
+import { ChevronRightIcon } from 'lucide-react';
 
 export default function Hero() {
   const t = useTranslations('Index');
@@ -18,8 +20,8 @@ export default function Hero() {
           <p className={`${francois_one.className} opacity-60 mb-[2.625rem] text-[0.9375rem] leading-5 pr-1 md:w-11/12 md:pr-0 lg:pr-4 lg:text-xl 2xl:text-xl 2xl:leading-[1.875rem] lg:mb-11 2xl:pr-4`}>{t('hero_text_3')}</p>
         </div>
         <div className='w-full flex items-center justify-start gap-2'>
-          <button className="btn btn-xs sm:btn-sm lg:btn-md rounded-s-xl">{t('follow_us')}</button>
-          <button className="btn btn-outline btn-xs sm:btn-sm lg:btn-md  rounded-e-xl">{t('contact_us')}</button>
+          <Button variant="ghost">{t('contact_us')}</Button>
+          <Button>{t('follow_us')}<ChevronRightIcon className='icon' /></Button>
         </div>
       </div>
       <div className=' relative basis-full sm:basis-1/2 lg:basis-full lg:h-full flex flex-col justify-center items-center gap-4 z-0'>

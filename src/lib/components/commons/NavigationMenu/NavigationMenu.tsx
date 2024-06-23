@@ -1,7 +1,7 @@
 'use client'
 import { cn } from "@/lib/utils"
-import React from 'React'
-// import { Icons } from "@/lib/components/icons"
+import { forwardRef } from 'react'
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -110,10 +110,7 @@ export function NavigationMenuDemo({ indexItem, items, extraItems }: PropsType) 
   )
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+const ListItem = forwardRef<React.ElementRef<"a">,  React.ComponentPropsWithoutRef<"a">>(({ className, title, children, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>

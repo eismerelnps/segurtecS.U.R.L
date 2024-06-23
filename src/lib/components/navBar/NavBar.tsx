@@ -10,6 +10,7 @@ import useDeviceType from '@/lib/hooks/useDeviceType';
 import { quicksand } from '@/lib/core/fonts/quicksand';
 import { NavigationMenuDemo } from '../commons/NavigationMenu/NavigationMenu';
 import { Button } from "@/lib/components/ui/button"
+import { ChevronRightIcon, Search } from 'lucide-react';
 
 type SubItem = {
     title: string;
@@ -199,9 +200,9 @@ export default function Navbar() {
                 {
                     !isMobile && <NavigationMenuDemo indexItem={indexItem} items={menuItems} />
                 }
-                <section className='flex justify-center items-center gap-4'>
-                    {isMobile ? <Button variant="outline" size="icon"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></Button> : <Button variant="outline">{t('contact_us')}</Button>}
-                    {!isMobile && <Button variant="ghost">{t('follow_us')}</Button>}
+                <section className='flex justify-center items-center gap-1'>
+                    {isMobile ? <Button variant="ghost" size="icon"><ChatBubbleLeftIcon className='icon' /></Button> : <Button variant="ghost" size="icon"><Search /></Button>}
+                    {!isMobile && <Button>{t('follow_us')}<ChevronRightIcon className='icon' /></Button>}
                 </section>
             </article>
         </div>
