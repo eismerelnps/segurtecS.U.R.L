@@ -8,6 +8,7 @@ import segurtec_logo from '/public/logo01.png'
 import Image from 'next/image'
 import useDeviceType from '@/lib/hooks/useDeviceType';
 import { quicksand } from '@/lib/core/fonts/quicksand';
+import { NavigationMenuDemo } from '../commons/NavigationMenu/NavigationMenu';
 
 const items = [
     {
@@ -26,13 +27,33 @@ const items = [
         key: "where_we_work",
         link: "/#business_area"
     }
-]
+];
+
+type SubItem = {
+    title: string;
+    description: string;
+    href: string
+}
+type MenuItem = {
+    title: string;
+    subItems: SubItem[]
+}
+
+type IndexItem = {
+    icon: React.ReactNode;
+    title: string;
+    subtitle: string;
+    description: string;
+    href: string
+    subItems: SubItem[]
+}
 
 function NavbarItems() {
     const path = usePathname();
     const t = useTranslations('Index');
 
     return (
+
         <section className='col-span-8 '>
             <ul className='flex flex-col md:flex-row gap-4 justify-start items-start md:justify-center md:items-center w-full h-full bg-white md:bg-transparent px-2'>
                 {
@@ -47,8 +68,109 @@ function NavbarItems() {
 
 export default function Navbar() {
     const t = useTranslations('Index');
+    const solutions_intl = useTranslations('navbar');
+    const intl = useTranslations('Index');
+
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const indexItem: IndexItem = {
+        icon: <>icon</>,
+        title: t('us'),
+        subtitle: t('company_name'),
+        description: t('services_title'),
+        href: '/',
+        subItems: [
+            {
+                title: intl('solutions'),
+                description: intl('solutions_up_title'),
+                href: "/",
+            },
+            {
+                title: intl('services'),
+                description: intl('solutions_up_title'),
+                href: "/",
+            },
+            {
+                title: intl('where_we_work'),
+                description: intl('solutions_up_title'),
+                href: "/",
+            }
+        ]
+    }
+
+    const menuItems: MenuItem[] = [
+        {
+            title: solutions_intl('solutions'),
+            subItems: [
+                {
+                    title: solutions_intl('access_control'),
+                    description: solutions_intl('access_control_navbar_description'),
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                }
+            ]
+        },
+        {
+            title: solutions_intl('services'),
+            subItems: [
+                {
+                    title: solutions_intl('electrical'),
+                    description: solutions_intl('electrical_description'),
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                },
+                {
+                    title: "Control de accesso",
+                    description: "Facilita la manera en la que controlas el acceso a tu hogar o negocio",
+                    href: '/'
+                }
+            ]
+        },
+    ]
 
     const { isMobile } = useDeviceType();
 
@@ -101,7 +223,7 @@ export default function Navbar() {
                 </section>
                 <div className={`${isMobile && drawerOpen ? 'fixed top-16 right-0 left-0' : 'hidden'}`}><NavbarItems /></div>
                 {
-                    !isMobile && <NavbarItems />
+                    !isMobile && <NavigationMenuDemo indexItem={indexItem} items={menuItems} />
                 }
                 <section className='flex justify-center items-center gap-4'>
                     {isMobile ? <button className="btn btn-circle bg-transparent border-0"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></button> : <button className="btn btn-primary bg-primary-500  btn-xs sm:btn-sm  rounded-none">{t('contact_us')}</button>}
@@ -114,3 +236,5 @@ export default function Navbar() {
 
     )
 }
+
+

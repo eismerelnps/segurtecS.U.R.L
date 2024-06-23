@@ -35,6 +35,20 @@
     "solutions_sub_title": "En SegurTec te ofrecemos nos ajustamos a las necesidades específicas de cada cliente por lo que ....",
     "access_control_system": "Sistemas de control de acceso",
     "luminary": "Luminarias",
-    "luminary_fix": "Reparación de luminarias"
+    "luminary_fix": "Reparación de luminarias",
+    "us": "Nosotros"
+  },
+  "index": {
+
+  },
+  "navbar": {
+    "solutions": "Soluciones",
+    "access_control": "Control de acceso",
+    "access_control_navbar_description": "Videoporteros, Biométricos, Cerraduras, Identificación, Acceso Vehicular.",
+    "biometrics": "Biométricos",
+    "biometrics_navbar_descrition": "Biométricos",
+    "services": "Servicios",
+    "electrical": "Servicios eléctricos",
+    "electrical_description": "Intalaciones electricas, corrientes débiles"
   }
 }

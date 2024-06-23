@@ -25,15 +25,14 @@ export default function Hero() {
       <div className=' relative basis-full sm:basis-1/2 lg:basis-full lg:h-full flex flex-col justify-center items-center gap-4 z-0'>
         <div className='absolute bottom-0 sm:inset-0 md:left-44 md:top-0 lg:left-96 lg:-top-0 flex flex-col gap-4 lg:gap-12 justify-center items-center rotate-45'>
           <div className="flex gap-4 lg:gap-12 ">
-            <div className='rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-br from-red-500 via-primary-600 to-primary-900 dark:from-primary-800 dark:via-primary-600 dark:to-white opacity-5 md:opacity-20'></div>
-            <div className='rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-bl from-red-500 via-primary-600 to-primary-950 dark:from-primary-100 dark:via-primary-600 dark:to-primary-100 opacity-5 md:opacity-20'></div>
-            <div className='rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-bl from-red-500 via-primary-600 to-primary-950 dark:from-primary-100 dark:via-primary-600 dark:to-primary-100 opacity-5 md:opacity-20'></div>
+            <div className='shadow-2xl shadow-primary-50/20 rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-br from-red-500 via-primary-600 to-primary-900 dark:from-primary-800 dark:via-primary-600 dark:to-white opacity-5 md:opacity-20'></div>
+            <div className='shadow-2xl shadow-primary-50/20 rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-bl from-red-500 via-primary-600 to-primary-950 dark:from-primary-100 dark:via-primary-600 dark:to-primary-100 opacity-5 md:opacity-20'></div>
+            <div className='shadow shadow-red-500 rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-bl from-red-500 via-primary-600 to-primary-950 dark:from-primary-100 dark:via-primary-600 dark:to-primary-100 opacity-5 md:opacity-20'></div>
 
           </div>
           <div className="flex gap-4 lg:gap-12">
+            <div className='shadow-xl shadow-red-500/20 rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-tl from-red-100 via-primary-200 to-primary-200 dark:from-primary-900 dark:via-primary-900 dark:to-primary-950 opacity-20 sm:opacity-55 z-0'></div>
             <div className='rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-tl from-red-100 via-primary-200 to-primary-200 dark:from-primary-900 dark:via-primary-900 dark:to-primary-950 opacity-20 sm:opacity-55 z-0'></div>
-            <div className='rounded-3xl size-44 lg:size-[24rem] bg-gradient-to-tl from-red-100 via-primary-200 to-primary-200 dark:from-primary-900 dark:via-primary-900 dark:to-primary-950 opacity-20 sm:opacity-55 z-0'></div>
-
           </div>
         </div>
       </div>
