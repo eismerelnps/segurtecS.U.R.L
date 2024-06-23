@@ -1,5 +1,5 @@
 'use client'
-import { Bars3Icon, ChatBubbleLeftEllipsisIcon, ChatBubbleLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ChatBubbleLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl';
@@ -9,25 +9,7 @@ import Image from 'next/image'
 import useDeviceType from '@/lib/hooks/useDeviceType';
 import { quicksand } from '@/lib/core/fonts/quicksand';
 import { NavigationMenuDemo } from '../commons/NavigationMenu/NavigationMenu';
-
-const items = [
-    {
-        key: "solutions",
-        link: ""
-    },
-    {
-        key: "products",
-        link: ""
-    },
-    {
-        key: "services",
-        link: "/#services"
-    },
-    {
-        key: "where_we_work",
-        link: "/#business_area"
-    }
-];
+import { Button } from "@/lib/components/ui/button"
 
 type SubItem = {
     title: string;
@@ -38,7 +20,6 @@ type MenuItem = {
     title: string;
     subItems: SubItem[]
 }
-
 type IndexItem = {
     icon: React.ReactNode;
     title: string;
@@ -51,16 +32,14 @@ type IndexItem = {
 function NavbarItems() {
     const path = usePathname();
     const t = useTranslations('Index');
-
     return (
-
         <section className='col-span-8 '>
-            <ul className='flex flex-col md:flex-row gap-4 justify-start items-start md:justify-center md:items-center w-full h-full bg-white md:bg-transparent px-2'>
-                {
-                    items.map(({ key, link }, index) => (
-                        <li key={index} className={` ${path === '/' && 'border-b-2'}  border-b-2 border-transparent hover:border-primary-200 transition-all duration-100 `}><Link href={link}><p>{t(key)}</p></Link></li>
-                    ))
-                }
+            <ul className='flex flex-col md:flex-row gap-4 justify-start items-start md:justify-center md:items-center w-full h-full bg-primary-50 dark:bg-primary-950 md:bg-transparent px-2'>
+                {/* {
+     items.map(({ key, link }, index) => (
+         <li key={index} className={` ${path === '/' && 'border-b-2'}  border-b-2 border-transparent hover:border-primary-200 transition-all duration-100 `}><Link href={link}><p>{t(key)}</p></Link></li>
+        ))
+    } */}
             </ul>
         </section>
     )
@@ -70,9 +49,9 @@ export default function Navbar() {
     const t = useTranslations('Index');
     const solutions_intl = useTranslations('navbar');
     const intl = useTranslations('Index');
-
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const { isMobile } = useDeviceType();
 
     const indexItem: IndexItem = {
         icon: <>icon</>,
@@ -172,8 +151,6 @@ export default function Navbar() {
         },
     ]
 
-    const { isMobile } = useDeviceType();
-
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > window.innerHeight) {
@@ -188,7 +165,6 @@ export default function Navbar() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
     const handleToggleDrawerState = () => {
         setDrawerOpen(!drawerOpen)
     }
@@ -203,8 +179,6 @@ export default function Navbar() {
                         </button>
                     </section>
                 }
-
-
                 <section className='flex justify-start items-center gap-2 px-12'>
                     <Link href={'/'}>
                         <div className='flex justify-start items-center gap-2'>
@@ -227,11 +201,9 @@ export default function Navbar() {
                 }
                 <section className='flex justify-center items-center gap-4'>
                     {isMobile ? <button className="btn btn-circle bg-transparent border-0"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></button> : <button className="btn btn-primary bg-primary-500  btn-xs sm:btn-sm  rounded-none">{t('contact_us')}</button>}
-                    {!isMobile && <button className="btn btn-outline btn-xs sm:btn-sm  rounded-none">{t('follow_us')}</button>}
+                    {!isMobile && <Button variant="secondary">{t('follow_us')}</Button>}
                 </section>
             </article>
         </div>
     )
 }
-
-

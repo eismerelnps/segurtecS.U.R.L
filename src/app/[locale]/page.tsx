@@ -1,5 +1,5 @@
-import LandingPage from '@/lib/components/LandingPage/LandingPage';
+import LandingPage from '@/lib/components/LandingPage/LandingPage'
 
-export default function Home() {
+export default function Page() {
   return <LandingPage />
 }

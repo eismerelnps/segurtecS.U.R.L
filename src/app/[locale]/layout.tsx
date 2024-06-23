@@ -6,8 +6,8 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'SegurtecS.U.R.L',
-  description: 'Segurtec SURL servcios de seguridad, cierres de seguridad automaticos y mecanicos',
+  title: 'SegurTec S.U.R.L',
+  description: 'Servicios de seguridad, electricidad, corrientes débiles, controles de acceso, cierres mecánicos y automáticos para tu hogar, negocio o empresa.',
 }
 
 export default function RootLayout({

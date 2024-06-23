@@ -5,7 +5,7 @@
     "hero_text_1_1": "la inseguridad te preocupe.",
     "hero_text_1_2": "Protegemos lo que más te importa",
     "hero_text_2": "protegemos lo que más te importa",
-    "hero_text_3": "Servicios de seguridad, electricidad, corrientes débiles, cierres mecánicos y automáticos para tu hogar o empresa.",
+    "hero_text_3": "Servicios de seguridad, electricidad, corrientes débiles, cierres mecánicos y automáticos para tu hogar, negocio o empresa.",
     "follow_us": "Síguenos",
     "contact_us": "Contáctanos",
     "know_more": "Saber más",
@@ -37,9 +37,6 @@
     "luminary": "Luminarias",
     "luminary_fix": "Reparación de luminarias",
     "us": "Nosotros"
-  },
-  "index": {
-
   },
   "navbar": {
     "solutions": "Soluciones",
