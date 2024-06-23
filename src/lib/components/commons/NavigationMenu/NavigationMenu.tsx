@@ -66,8 +66,8 @@ export function NavigationMenuDemo({ indexItem, items, extraItems }: PropsType) 
                   </a>
                 </NavigationMenuLink>
               </li>
-              {indexItem.subItems.map(({ title, href, description }) => (
-                <ListItem href={href} title={title}>{description}</ListItem>
+              {indexItem.subItems.map(({ title, href, description }, index) => (
+                <ListItem key={index} href={href} title={title}>{description}</ListItem>
               ))
               }
             </ul>

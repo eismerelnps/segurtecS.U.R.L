@@ -229,11 +229,8 @@ export default function Navbar() {
                     {isMobile ? <button className="btn btn-circle bg-transparent border-0"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></button> : <button className="btn btn-primary bg-primary-500  btn-xs sm:btn-sm  rounded-none">{t('contact_us')}</button>}
                     {!isMobile && <button className="btn btn-outline btn-xs sm:btn-sm  rounded-none">{t('follow_us')}</button>}
                 </section>
-
-
             </article>
         </div>
-
     )
 }
 
