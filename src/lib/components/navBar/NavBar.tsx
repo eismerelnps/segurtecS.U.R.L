@@ -200,8 +200,8 @@ export default function Navbar() {
                     !isMobile && <NavigationMenuDemo indexItem={indexItem} items={menuItems} />
                 }
                 <section className='flex justify-center items-center gap-4'>
-                    {isMobile ? <button className="btn btn-circle bg-transparent border-0"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></button> : <button className="btn btn-primary bg-primary-500  btn-xs sm:btn-sm  rounded-none">{t('contact_us')}</button>}
-                    {!isMobile && <Button variant="secondary">{t('follow_us')}</Button>}
+                    {isMobile ? <Button variant="outline" size="icon"><ChatBubbleLeftIcon className='size-8 text-primary-500' /></Button> : <Button variant="outline">{t('contact_us')}</Button>}
+                    {!isMobile && <Button variant="ghost">{t('follow_us')}</Button>}
                 </section>
             </article>
         </div>
