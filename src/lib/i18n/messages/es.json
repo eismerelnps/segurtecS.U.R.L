@@ -47,5 +47,18 @@
     "services": "Servicios",
     "electrical": "Servicios eléctricos",
     "electrical_description": "Intalaciones electricas, corrientes débiles"
+  },
+  "solutions": {
+    "solutions": "Soluciones",
+    "access_control": "Control de acceso",
+    "access_control_navbar_description": "Videoporteros, Biométricos, Cerraduras, Identificación, Acceso Vehicular.",
+    "biometrics": "Biométricos",
+    "biometrics_navbar_descrition": "Biométricos",
+    "services": "Servicios",
+    "electrical": "Servicios eléctricos",
+    "electrical_description": "Intalaciones electricas, corrientes débiles",
+    "vehicle_control": "Control vehicular",
+    "access_control_system": "Sistemas de control de acceso",
+    "luminary": "Luminarias"
   }
 }

@@ -20,7 +20,7 @@ export default function Hero() {
           <p className={`${francois_one.className} opacity-60 mb-[2.625rem] text-[0.9375rem] leading-5 pr-1 md:w-11/12 md:pr-0 lg:pr-4 lg:text-xl 2xl:text-xl 2xl:leading-[1.875rem] lg:mb-11 2xl:pr-4`}>{t('hero_text_3')}</p>
         </div>
         <div className='w-full flex items-center justify-start gap-2'>
-          <Button variant="ghost">{t('contact_us')}</Button>
+          <Button variant="outline" >{t('contact_us')}</Button>
           <Button>{t('follow_us')}<ChevronRightIcon className='icon' /></Button>
         </div>
       </div>

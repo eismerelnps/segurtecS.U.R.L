@@ -191,7 +191,7 @@ export default function Navbar() {
                                 </div>
                             </div>
                             <div className={` flex justify-start items-center gap-2`}>
-                                <h6 className={`${quicksand.className} font-bold`}><span className='text-primary-500'>SegurTec</span> <span className='text-black dark:text-primary-50 text-sm'>S.U.R.L</span></h6>
+                                <h5 className={`${quicksand.className} `}><span className='text-primary-500 font-bold'>SegurTec</span> <span className='text-black dark:text-primary-50 text-sm'>S.U.R.L</span></h5>
                             </div>
                         </div>
                     </Link>
