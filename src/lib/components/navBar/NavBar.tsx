@@ -1,5 +1,5 @@
 'use client'
-import { Bars3Icon, ChatBubbleLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ChatBubbleLeftIcon, LanguageIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl';
@@ -8,9 +8,19 @@ import segurtec_logo from '/public/logo01.png'
 import Image from 'next/image'
 import useDeviceType from '@/lib/hooks/useDeviceType';
 import { quicksand } from '@/lib/core/fonts/quicksand';
-import { NavigationMenuDemo } from '../commons/NavigationMenu/NavigationMenu';
+import { ListItem, NavigationMenuDemo } from '../commons/NavigationMenu/NavigationMenu';
 import { Button } from "@/lib/components/ui/button"
 import { ChevronRightIcon, Search } from 'lucide-react';
+
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
+} from "@/lib/components/ui/navigation-menu"
 
 type SubItem = {
     title: string;
@@ -45,6 +55,17 @@ function NavbarItems() {
         </section>
     )
 }
+
+const availableLanguages = [
+    {
+        name: 'es',
+        href: 'es'
+    },
+    {
+        name: 'en',
+        href: 'en'
+    }
+]
 
 export default function Navbar() {
     const t = useTranslations('Index');
@@ -171,7 +192,7 @@ export default function Navbar() {
     }
     return (
         <div className='relative '>
-            <article className={`${isScrolled ? 'transition-all duration-150 bg-primary-50/90 dark:bg-primary-950/80 border-b border-white/20' : 'dark:bg-black/20'} z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2   `}>
+            <article className={`${isScrolled ? 'transition-all duration-150 bg-primary-50/90 dark:bg-primary-950/80 border-b border-white/20' : 'dark:bg-black/10'} z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2   `}>
                 {
                     isMobile &&
                     <section>
@@ -202,7 +223,29 @@ export default function Navbar() {
                 }
                 <section className='flex justify-center items-center gap-1'>
                     {isMobile ? <Button variant="ghost" size="icon"><ChatBubbleLeftIcon className='icon' /></Button> : <Button variant="ghost" size="icon"><Search /></Button>}
-                    {!isMobile && <Button>{t('follow_us')}<ChevronRightIcon className='icon' /></Button>}
+                    {/* {!isMobile && <Button><LanguageIcon className='icon' /></Button>} */}
+                    <NavigationMenu >
+                        <NavigationMenuList >
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger><LanguageIcon className='icon' /></NavigationMenuTrigger>
+                                <NavigationMenuContent className='w-4'>
+                                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                                        {availableLanguages.map((item, index) => (
+                                            <ListItem
+                                                key={index}
+                                                title={item.name}
+                                                href={item.href}
+                                            >
+                                                {item.name}
+                                            </ListItem>
+                                        ))}
+                                    </ul>
+                                </NavigationMenuContent>
+
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
+
+                    </NavigationMenu>
                 </section>
             </article>
         </div>

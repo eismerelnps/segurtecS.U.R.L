@@ -110,7 +110,7 @@ export function NavigationMenuDemo({ indexItem, items, extraItems }: PropsType) 
   )
 }
 
-const ListItem = forwardRef<React.ElementRef<"a">,  React.ComponentPropsWithoutRef<"a">>(({ className, title, children, ...props }, ref) => {
+export const ListItem = forwardRef<React.ElementRef<"a">,  React.ComponentPropsWithoutRef<"a">>(({ className, title, children, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
