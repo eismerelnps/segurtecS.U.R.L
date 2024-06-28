@@ -14,7 +14,7 @@ export default function ServicesList() {
                 <div className='basis-1/2 w-full  flex flex-col items-start justify-center '>
                     <h3 className={`${quicksand.className} font-bold`}>{t('services_title')}</h3>
                     <div className='bg-primary-500  h-1 w-12 lg:w-24 my-2'></div>
-                    <p className={`${quicksand.className} font-normal`}>{t('services_description')}</p>
+                    <p className={`${quicksand.className} opacity-60 font-normal`}>{t('services_description')}</p>
                 </div>
                 <div className='basis-1/2 w-full flex justify-center items-center '>
                     <div className='size-44 md:size-72 lg:size-96 bg-neutral-500 rounded-full'></div>

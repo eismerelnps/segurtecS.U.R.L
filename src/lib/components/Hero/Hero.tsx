@@ -9,7 +9,7 @@ export default function Hero() {
   const t = useTranslations('Index');
 
   return (
-    <div className='hero_background w-full h-full lg:h-dvh flex flex-col gap-8 sm:flex-row pt-24 px-[5%] lg:px-[8%] lg:py-[5%] xl:px-[5%] xl:pt-[10%] overflow-hidden'>
+    <div className='hero_background w-full h-dvh flex flex-col gap-8 sm:flex-row pt-24 px-[5%] lg:px-[8%] lg:py-[5%] xl:px-[5%] xl:pt-[10%] overflow-hidden'>
       <div className='basis-full sm:basis-1/2 lg:basis-full lg:h-full flex flex-col justify-center items-start lg:gap-2 relative z-50'>
         <div>
           <h3 className={`${quicksand.className} font-bold text-primary-950 dark:text-primary-50`}>{t('hero_text_1')}</h3>

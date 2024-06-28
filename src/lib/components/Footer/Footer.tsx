@@ -8,12 +8,16 @@ import elonprods_logo from '/public/elonprods_logo.png'
 import segurtec_logo from '/public/logo01.png'
 import CompanyAvatar from '../commons/CompanyAvatar';
 import Link from 'next/link';
-import { Facebook } from 'react-feather';
+import { Facebook, Instagram } from 'react-feather';
 const currentYear = new Date().getFullYear();
 
 const our_company_items = [
   {
     key: "home",
+    link: ""
+  },
+  {
+    key: "about_us",
     link: ""
   },
   {
@@ -64,7 +68,7 @@ export default function Footer() {
   const t = useTranslations('Index');
 
   return (
-    <div id='footer' className='flex flex-col py-4 lg:py-12 px-8 lg:px-32 gap-8 lg:gap-16 bg-primary-50'>
+    <div id='footer' className='flex flex-col py-4 lg:py-12 px-8 lg:px-32 gap-8 lg:gap-16 bg-primary-50 dark:bg-primary-950'>
 
       <div className='w-full flex flex-col md:flex-row justify-center items-center gap-4'>
         <h2 className={`${quicksand.className} text-primary-500`}>{t('would_glad_help_you')}</h2>
@@ -82,16 +86,20 @@ export default function Footer() {
               </div>
             </div>
             <div className={` flex justify-start items-center gap-2`}>
-              <h6 className='text-primary-500'>SegurTec</h6>
-              <h6 className='text-black'>S.U.R.L</h6>
+              <h6 className='text-primary-500'>SEGURTEC</h6>
+              <h6 className='text-black dark:text-primary-50'>SURL</h6>
             </div>
           </div>
-          <div>
+          <div className='flex flex-col gap-2'>
             <p>{t('follow_us')}</p>
-            <button className='btn btn-ghost btn-circle '>
-              <Facebook />
-            </button>
-
+            <div className='flex'>
+              <button className='btn btn-ghost btn-circle '>
+                <Facebook />
+              </button>
+              <button className='btn btn-ghost btn-circle '>
+                <Instagram />
+              </button>
+            </div>
           </div>
         </div>
 

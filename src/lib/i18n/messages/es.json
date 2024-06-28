@@ -1,5 +1,6 @@
 {
   "Index": {
+    "about_us": "Sobre Nosotros",
     "company_name": "SegurTec SURL",
     "hero_text_1": "No dejes que",
     "hero_text_1_1": "la inseguridad te preocupe.",
@@ -69,5 +70,8 @@
     "item_4": "Seguridad ante todo",
     "item_5": "+500 proyectos realizados",
     "item_6": "Pioneros del sector en Cuba"
+  },
+  "services": {
+    "know_more": "Saber más"
   }
 }

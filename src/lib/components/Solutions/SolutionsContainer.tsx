@@ -62,7 +62,7 @@ export default function SolutionsContainer() {
   ]
 
   return (
-    <article className='flex flex-col gap-4 md:gap-12 px-[5%] py-12 lg:py-24 bg-primary-500/5'>
+    <article className='flex flex-col gap-4 md:gap-12 px-[5%] py-12 lg:py-24 bg-primary-950'>
       <div className='flex flex-col xl:gap-1'>
         <h6 className={`${francois_one.className}`}>{t('solutions_up_title')}</h6>
         <div className='flex flex-col gap-2'>

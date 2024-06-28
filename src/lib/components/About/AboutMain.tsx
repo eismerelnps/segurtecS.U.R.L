@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import banner_01 from '/public/banner_01.webp'
-import wolf_banner from '/public/wolf_banner.jpg'
 import { useTranslations } from 'next-intl'
 import about_01 from '/public/about_Section/about_01.jpeg'
 import about_02 from '/public/about_Section/about_02.jpeg'
@@ -16,9 +14,9 @@ export default function AboutMain() {
     const intl = useTranslations('about');
     return (
         <div className=' '>
-            <div className='flex flex-col lg:flex-row justify-center px-4 py-8 sm:px-2 sm:py-4 lg:px-2 lg:py-16'>
-                <div className='basis-full lg:basis-1/2 '>
-                    <div className='lg:hidden my-8 flex flex-col justify-center items-center gap-4'>
+            <div className='flex flex-col md:flex-row justify-center px-4 py-8 sm:px-2 sm:py-4 lg:px-2 lg:py-16'>
+                <div className='basis-full md:basis-1/2 '>
+                    <div className='md:hidden my-8 flex flex-col justify-center items-center gap-4'>
                         <h2 className=''>{intl('title')}</h2>
                         <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi. Exercitationem dolor inventore ipsa quibusdam culpa odit ab nihil molestiae, nostrum, sint natus sit aliquid, aliquam laudantium eius deserunt deleniti.</p>
                     </div>
@@ -26,18 +24,20 @@ export default function AboutMain() {
 
                     <div className='flex flex-col gap-2 items-center h-full px-8'>
                         <div className='flex gap-8 w-full relative justify-end items-end'>
-                            <div className='relative h-44 w-56'>
+                            <div className=''>
                                 <Image
-                                    fill
+                                    width={200}
+                                    height={200}
                                     className='rounded-2xl'
                                     src={about_01}
                                     alt={'Segurtec banner'}
                                 />
                             </div>
 
-                            <div className='relative h-64 w-52  mb-8'>
+                            <div className=' '>
                                 <Image
-                                    fill
+                                    width={200}
+                                    height={200}
                                     className='rounded-2xl'
                                     src={about_04}
                                     alt={'Segurtec banner'}
@@ -65,10 +65,10 @@ export default function AboutMain() {
 
 
 
-                <div className='basis-full lg:basis-1/2 p-2 sm:p-6 lg:p-8  2xl:py-8'>
+                <div className='basis-full md:basis-1/2 p-2 sm:p-6 lg:p-8  2xl:py-8'>
                     <div className='flex  items-center  h-full'>
                         <div className='flex flex-col gap-4'>
-                            <div className='hidden gap-2 lg:flex flex-col'>
+                            <div className='hidden gap-2 md:flex flex-col'>
                                 <h2 className={`${quicksand.className}`}>{intl('title')}</h2>
                                 <h6 className={`${francois_one.className} opacity-80 font-thin`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi. Exercitationem dolor inventore ipsa quibusdam culpa odit ab nihil molestiae, nostrum, sint natus sit aliquid, aliquam laudantium eius deserunt deleniti.</h6>
 

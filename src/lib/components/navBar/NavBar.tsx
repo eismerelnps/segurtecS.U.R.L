@@ -73,7 +73,7 @@ export default function Navbar() {
     const intl = useTranslations('Index');
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const { isMobile } = useDeviceType();
+    const { isDesktop } = useDeviceType();
 
     const indexItem: IndexItem = {
         icon: <>icon</>,
@@ -174,8 +174,9 @@ export default function Navbar() {
     ]
 
     useEffect(() => {
+
         const handleScroll = () => {
-            if (window.scrollY > window.innerHeight) {
+            if (window.scrollY > 16) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
@@ -187,20 +188,15 @@ export default function Navbar() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+
     const handleToggleDrawerState = () => {
         setDrawerOpen(!drawerOpen)
     }
     return (
         <div className='relative '>
-            <article className={`${isScrolled ? 'transition-all duration-150 bg-primary-50/90 dark:bg-primary-950/80 border-b border-white/20' : 'dark:bg-black/10'} z-[1000] fixed top-0 right-0 left-0 h-16 flex justify-between items-center p-2   `}>
-                {
-                    isMobile &&
-                    <section>
-                        <button onClick={handleToggleDrawerState} className={`text-primary-500 dark:text-primary-900 border-primary-950 text-lg font-semibold px-2 py-2 rounded-full  hover:opacity-80 outline-0 focus:outline-0 transition-all duration-200 `}>
-                            {drawerOpen ? <XMarkIcon className='size-8' /> : <Bars3Icon className='size-8 dark:text-primary-50' />}
-                        </button>
-                    </section>
-                }
+            <article className={`${isScrolled ? 'h-16 transition-all duration-150 hero_background border-b border-primary-950 dark:bg-primary-50' : 'dark:bg-transparent  h-[5rem]'} z-[1000] fixed top-0 right-0 left-0  flex justify-between items-center p-2   `}>
+
                 <section className='flex justify-start items-center gap-2 px-12'>
                     <Link href={'/'}>
                         <div className='flex justify-start items-center gap-2'>
@@ -212,18 +208,20 @@ export default function Navbar() {
                                 </div>
                             </div>
                             <div className={` flex justify-start items-center gap-2`}>
-                                <h5 className={`${quicksand.className} `}><span className='text-primary-500 font-bold'>SegurTec</span> <span className='text-black dark:text-primary-50 text-sm'>S.U.R.L</span></h5>
+                                <h5 className={`${isScrolled ? 'text-xs md:text-sm lg:text-md' : 'text-sm md:text-base lg:text-lg'} ${quicksand.className} `}><span className='text-primary-500 font-bold'>SegurTec</span> <span className='text-black dark:text-primary-50 text-sm'>S.U.R.L</span></h5>
                             </div>
                         </div>
                     </Link>
                 </section>
-                <div className={`${isMobile && drawerOpen ? 'fixed top-16 right-0 left-0' : 'hidden'}`}><NavbarItems /></div>
+
+                
+                <div className={`${!isDesktop && drawerOpen ? 'fixed top-16 right-0 left-0' : 'hidden'}`}><NavbarItems /></div>
                 {
-                    !isMobile && <NavigationMenuDemo indexItem={indexItem} items={menuItems} />
+                    !!isDesktop && <NavigationMenuDemo indexItem={indexItem} items={menuItems} />
                 }
                 <section className='flex justify-center items-center gap-1'>
-                    {isMobile ? <Button variant="ghost" size="icon"><ChatBubbleLeftIcon className='icon' /></Button> : <Button variant="ghost" size="icon"><Search /></Button>}
-                    {/* {!isMobile && <Button><LanguageIcon className='icon' /></Button>} */}
+                    {!isDesktop ? <Button variant="ghost" size="icon"><ChatBubbleLeftIcon className='icon' /></Button> : <Button variant="ghost" size="icon"><Search /></Button>}
+                    {/* {!!isDesktop && <Button><LanguageIcon className='icon' /></Button>} */}
                     <NavigationMenu >
                         <NavigationMenuList >
                             <NavigationMenuItem>
@@ -247,6 +245,15 @@ export default function Navbar() {
 
                     </NavigationMenu>
                 </section>
+
+                {
+                    !isDesktop &&
+                    <section>
+                            <button onClick={handleToggleDrawerState} className={`text-primary-500 dark:text-primary-50 border-primary-950 text-lg font-semibold px-2 py-2 rounded-full  hover:opacity-80 outline-0 focus:outline-0 transition-all duration-200 `}>
+                            {drawerOpen ? <XMarkIcon className='size-8' /> : <Bars3Icon className='size-8 ' />}
+                        </button>
+                    </section>
+                }
             </article>
         </div>
     )

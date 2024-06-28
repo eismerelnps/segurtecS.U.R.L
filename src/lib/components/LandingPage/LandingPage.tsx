@@ -16,7 +16,7 @@ export default function LandingPage() {
       <SolutionsContainer />
       <ServicesList />
       <BussinessArea />
-      <Clients />
+      {/* <Clients /> */}
       <Footer />
     </main>
   )
