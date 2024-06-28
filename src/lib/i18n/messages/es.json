@@ -60,5 +60,14 @@
     "vehicle_control": "Control vehicular",
     "access_control_system": "Sistemas de control de acceso",
     "luminary": "Luminarias"
+  },
+  "about": {
+    "title": "Su seguridad, nuestra preocupación",
+    "item_1": "+10 años de experiencia",
+    "item_2": "+200 clientes en toda Cuba",
+    "item_3": "Cubrimos toda La Habana",
+    "item_4": "Seguridad ante todo",
+    "item_5": "+500 proyectos realizados",
+    "item_6": "Pioneros del sector en Cuba"
   }
 }

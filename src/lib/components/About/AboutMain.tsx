@@ -3,94 +3,113 @@ import React from 'react'
 import banner_01 from '/public/banner_01.webp'
 import wolf_banner from '/public/wolf_banner.jpg'
 import { useTranslations } from 'next-intl'
+import about_01 from '/public/about_Section/about_01.jpeg'
+import about_02 from '/public/about_Section/about_02.jpeg'
+import about_03 from '/public/about_Section/about_03.jpeg'
+import about_04 from '/public/about_Section/about_04.jpeg'
+import { quicksand } from '@/lib/core/fonts/quicksand'
+import { francois_one } from '@/lib/core/fonts/francois-one'
+import Separator from './components/Separator'
 
 export default function AboutMain() {
     const t = useTranslations('Index');
+    const intl = useTranslations('about');
     return (
-        <div className=' shadow shadow-neutral-50 sm:p-8 lg:p-16'>
-            <div className='flex flex-col lg:flex-row justify-center px-4 py-8 sm:px-2 sm:py-4 lg:px-8 lg:py-16'>
+        <div className=' '>
+            <div className='flex flex-col lg:flex-row justify-center px-4 py-8 sm:px-2 sm:py-4 lg:px-2 lg:py-16'>
                 <div className='basis-full lg:basis-1/2 '>
                     <div className='lg:hidden my-8 flex flex-col justify-center items-center gap-4'>
-                        <h1 className=''>{t('who_we_are')}</h1>
+                        <h2 className=''>{intl('title')}</h2>
                         <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi. Exercitationem dolor inventore ipsa quibusdam culpa odit ab nihil molestiae, nostrum, sint natus sit aliquid, aliquam laudantium eius deserunt deleniti.</p>
                     </div>
-                    <div className='flex items-center h-full'>
-                        <Image
-                            className='rounded-2xl'
-                            src={wolf_banner}
-                            alt={'Segurtec banner'}
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                                objectFit: 'cover',
-                                objectPosition: 'top',
-                            }}
-                        />
+
+
+                    <div className='flex flex-col gap-2 items-center h-full px-8'>
+                        <div className='flex gap-8 w-full relative justify-end items-end'>
+                            <div className='relative h-44 w-56'>
+                                <Image
+                                    fill
+                                    className='rounded-2xl'
+                                    src={about_01}
+                                    alt={'Segurtec banner'}
+                                />
+                            </div>
+
+                            <div className='relative h-64 w-52  mb-8'>
+                                <Image
+                                    fill
+                                    className='rounded-2xl'
+                                    src={about_04}
+                                    alt={'Segurtec banner'}
+                                />
+                            </div>
+                        </div>
+                        <div className='flex flex-col gap-2 w-full items-center'>
+                            <Image
+                                className='rounded-2xl self-end'
+                                src={about_03}
+                                alt={'Segurtec banner'}
+                                width={200}
+                                height={200}
+                            />
+                            <Image
+                                className='rounded-2xl self-center'
+                                src={about_02}
+                                alt={'Segurtec banner'}
+                                width={200}
+                                height={200}
+                            />
+                        </div>
                     </div>
-
-
-
                 </div>
 
 
 
                 <div className='basis-full lg:basis-1/2 p-2 sm:p-6 lg:p-8  2xl:py-8'>
                     <div className='flex  items-center  h-full'>
-                        <div>
-                            <div className='hidden lg:block'>
-                                <h1 className='text-xl lg:text-4xl 2xl:text-6xl text-center text-neutral-950 font-bold my-2 2xl:mt-8 2xl:mb-4 '>¿Quienes somos?</h1>
-                                <p className='2xl:text-3xl text-center text-neutral-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi. Exercitationem dolor inventore ipsa quibusdam culpa odit ab nihil molestiae, nostrum, sint natus sit aliquid, aliquam laudantium eius deserunt deleniti.</p>
+                        <div className='flex flex-col gap-4'>
+                            <div className='hidden gap-2 lg:flex flex-col'>
+                                <h2 className={`${quicksand.className}`}>{intl('title')}</h2>
+                                <h6 className={`${francois_one.className} opacity-80 font-thin`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi. Exercitationem dolor inventore ipsa quibusdam culpa odit ab nihil molestiae, nostrum, sint natus sit aliquid, aliquam laudantium eius deserunt deleniti.</h6>
 
                             </div>
-                            <div className='flex flex-row flex-wrap justify-center  my-2 2xl:my-8'>
-
-
+                            <div className='flex flex-row flex-wrap justify-center  my-2 lg:my-8'>
                                 <div className='basis-1/2 p-2 '>
-                                    <hr className='my-2' />
-                                    <h2 className='text-start text-sm 2xl:text-3xl font-bold my-0.5'>Lorem, ipsum.</h2>
-                                    <p className='text-sm 2xl:text-xl sm:text-base ms-0.5 text-start '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut totam voluptatibus molestiae fugiat at corrupti dolorem possimus!</p>
+                                    <Separator />
+                                    <h4 className='font-bold'>{intl('item_1')}</h4>
+                                    <h6 className={`${quicksand.className} opacity-60 font-thin`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut</h6>
                                 </div>
 
                                 <div className='basis-1/2 p-2 '>
-                                    <hr className='my-2' />
-                                    <h2 className='text-start text-sm 2xl:text-3xl font-bold my-0.5'>Lorem, ipsum.</h2>
-                                    <p className='text-sm 2xl:text-xl sm:text-base ms-0.5 text-start '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut totam voluptatibus molestiae fugiat at corrupti dolorem possimus!</p>
+                                    <Separator />
+                                    <h4 className='font-bold'>{intl('item_2')}</h4>
+                                    <h6 className={`${quicksand.className} opacity-60 font-thin`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut</h6>
                                 </div>
                                 <div className='basis-1/2 p-2 '>
-                                    <hr className='my-2' />
-                                    <h2 className='text-start text-sm 2xl:text-3xl font-bold my-0.5'>Lorem, ipsum.</h2>
-                                    <p className='text-sm 2xl:text-xl sm:text-base ms-0.5 text-start '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut totam voluptatibus molestiae fugiat at corrupti dolorem possimus!</p>
+                                    <Separator />
+                                    <h4 className='font-bold'>{intl('item_3')}</h4>
+                                    <h6 className={`${quicksand.className} opacity-60 font-thin`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut</h6>
                                 </div>
                                 <div className='basis-1/2 p-2 '>
-                                    <hr className='my-2' />
-                                    <h2 className='text-start text-sm 2xl:text-3xl font-bold my-0.5'>Lorem, ipsum.</h2>
-                                    <p className='text-sm 2xl:text-xl sm:text-base ms-0.5 text-start '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut totam voluptatibus molestiae fugiat at corrupti dolorem possimus!</p>
+                                    <Separator />
+                                    <h4 className='font-bold'>{intl('item_4')}</h4>
+                                    <h6 className={`${quicksand.className} opacity-60 font-thin`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut</h6>
                                 </div>
                                 <div className='basis-1/2 p-2 '>
-                                    <hr className='my-2' />
-                                    <h2 className='text-start text-sm 2xl:text-3xl font-bold my-0.5'>Lorem, ipsum.</h2>
-                                    <p className='text-sm 2xl:text-xl sm:text-base ms-0.5 text-start '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut totam voluptatibus molestiae fugiat at corrupti dolorem possimus!</p>
+                                    <Separator />
+                                    <h4 className='font-bold'>{intl('item_5')}</h4>
+                                    <h6 className={`${quicksand.className} opacity-60 font-thin`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut</h6>
                                 </div>
                                 <div className='basis-1/2 p-2 '>
-                                    <hr className='my-2' />
-                                    <h2 className='text-start text-sm 2xl:text-3xl font-bold my-0.5'>Lorem, ipsum.</h2>
-                                    <p className='text-sm 2xl:text-xl sm:text-base ms-0.5 text-start '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut totam voluptatibus molestiae fugiat at corrupti dolorem possimus!</p>
+                                    <Separator />
+                                    <h4 className='font-bold'>{intl('item_6')}</h4>
+                                    <h6 className={`${quicksand.className} opacity-60 font-thin`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut</h6>
                                 </div>
-
-
                             </div>
-
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
-            {/* <div className='flex justify-end p-4'>
-        <button className='bg-neutral-50 text-neutral-950 p-2.5 rounded-xl'>Conozca más</button>
-
-      </div> */}
         </div>
     )
 }
